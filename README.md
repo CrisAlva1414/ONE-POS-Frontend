@@ -1,73 +1,69 @@
-# React + TypeScript + Vite
+# 🖨️ ERP Q-Cube Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sistema de demostración ERP profesional para impresoras térmicas Q-Cube. Desarrollado con React 19, TypeScript y Vite.
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-7.3-646CFF?logo=vite&logoColor=white)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📋 Descripción
 
-## React Compiler
+Aplicación de demostración técnica que simula un sistema ERP completo de gestión logística, diseñada específicamente para mostrar las capacidades de las impresoras térmicas Q-Cube en un entorno real.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### ✨ Características Principales
 
-## Expanding the ESLint configuration
+- **Dashboard Ejecutivo**: Estadísticas en tiempo real, alertas de stock bajo
+- **Gestión de Inventario**: Control completo de SKUs con categorías y alertas
+- **Órdenes de Despacho**: Picking, control de faltantes, múltiples estados
+- **Impresión Térmica**: Generación automática de tickets (picking, faltantes, despacho)
+- **Gestión de Clientes**: CRUD completo con historial
+- **Movimientos de Inventario**: Trazabilidad de entradas, salidas y ajustes
+- **Cola de Impresión**: Monitoreo en tiempo real de trabajos
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Inicio Rápido
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerrequisitos
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Node.js 18+
+- npm o yarn  
+- Servidor de impresión FastAPI corriendo
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Instalación
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+\`\`\`bash
+# Instalar dependencias
+npm install
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# Iniciar servidor de desarrollo
+npm run dev
+\`\`\`
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+La aplicación estará disponible en \`http://localhost:5173\`
+
+### Configuración
+
+1. Abrir la aplicación en el navegador
+2. Ir a **Configuración** en el menú lateral
+3. Configurar la URL del servidor de impresión (ej: \`http://192.168.0.50:8080\`)
+4. Hacer clic en "Probar Conexión"
+
+## 📄 Documentación
+
+Ver [DOCS.md](./DOCS.md) para documentación completa del sistema.
+
+## 🛠️ Scripts Disponibles
+
+\`\`\`bash
+npm run dev      # Servidor de desarrollo (Puerto 5173)
+npm run build    # Build de producción
+npm run preview  # Preview del build
+npm run lint     # Ejecutar ESLint
+\`\`\`
+
+## 📝 Licencia
+
+Proyecto de demostración técnica - ONE-POS
+
+---
+
+Desarrollado con ❤️ para demostrar las capacidades de las impresoras térmicas Q-Cube
